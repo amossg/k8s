@@ -3,5 +3,5 @@ on: push
 jobs:
   runs-on: 	ubuntu-latest
   steps:
-    -name: Test step
-     run: echo "hi"
+  - name: Test step
+    run: echo "hi"
