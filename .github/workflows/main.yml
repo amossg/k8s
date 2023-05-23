@@ -7,7 +7,7 @@ jobs:
     - name: pwd
       run: pwd
     - name: ls
-      run: ls
+      run: ls -la
     - name: doker build
       run: sudo docker build -t testapp /home/runner/work/k8s/k8s/flask
       
