@@ -4,8 +4,8 @@ jobs:
   test_job:
     runs-on: ubuntu-latest
     steps:
-    - name: cd
-      run: cd flask
+    - name: pwd
+      run: pwd
     - name: doker build
       run: sudo docker build -t testapp .
       
