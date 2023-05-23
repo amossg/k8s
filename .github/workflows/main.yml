@@ -4,5 +4,8 @@ jobs:
   test_job:
     runs-on: ubuntu-latest
     steps:
-    - name: Test step
-      run: sudo docker -v
+    - name: doker build
+      run: sudo docker build -t testapp .
+      
+    - name: docker run
+      run: sudo docker run --rm -p 5000:5000 testapp
