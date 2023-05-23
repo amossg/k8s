@@ -8,6 +8,8 @@ jobs:
       run: pwd
     - name: ls
       run: ls -la
+    -name: Git clone
+      uses: actions/checkout@v1 
     - name: doker build
       run: sudo docker build -t testapp /home/runner/work/k8s/k8s/flask
       
