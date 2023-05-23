@@ -7,7 +7,7 @@ jobs:
     - name: pwd
       run: pwd
     - name: doker build
-      run: sudo docker build -t testapp .
+      run: sudo docker build -t testapp /home/runner/work/k8s/k8s/flask
       
     - name: docker run
       run: sudo docker run --rm -p 5000:5000 testapp
