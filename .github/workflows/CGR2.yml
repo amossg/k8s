@@ -17,3 +17,4 @@ jobs:
           project_id: flask
           image_name: server-end
           dockerfile: /home/runner/work/k8s/k8s/flask/Dockerfile
+          context: /home/runner/work/k8s/k8s/flask/
