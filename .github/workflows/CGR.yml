@@ -16,7 +16,7 @@ jobs:
           project_id: flack
           image_name: backend
           image_tag: latest,v1
-          dockerfile: /flask/Dockerfile
+          dockerfile: /home/runner/work/k8s/k8s/flask/Dockerfile
 
           
           
