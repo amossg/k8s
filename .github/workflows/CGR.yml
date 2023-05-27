@@ -1,28 +1,23 @@
-name: Push to GCR GitHub Action
+name: Docker-GCP
 on: workflow_dispatch
 jobs:
-  build-and-push-to-gcr:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - name: Setup auth
-      id: "auth"
-      uses: "google-github-actions/auth@v0"
+    - uses: actions/checkout@v2
+    - name: Setup gcloud
+      uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       with:
-       workload_identity_provider: ${{ secrets.AUTH_TO_GCP }}
-       service_account: "account-for-git-auth@${{ secrets.AUTH_TO_GCP }}.iam.gserviceaccount.com"
-    - name: Setup docker
-      uses: docker/setup-buildx-action@v2
-    - name: Authenticate docker
-      run: |
-        gcloud auth configure-docker --quiet gcr.io
-    - name: Build and push
-      uses: docker/build-push-action@v3
-      with:
-        context: .
-        push: true
-        tags: ${{ env.IMAGE }}
-        cache-from: type=gha
-        cache-to: type=gha,mode=max
+        version: '290.0.1'
+        service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }} 
+        project_id: ${{ secrets.GCR_FLASK }} 
 
+    - name: Configure docker for GCP
+      run: gcloud auth configure-docker
+    - name: Build docker image
+      run:  docker build -t gcr.io/${{ secrets.GCR_FLASK }}/<flask>:latest . 
+
+    - name: Push to Google Container Registry
+      run:  docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/<YOUR_IMAGE_NAME>:latest 
           
           
