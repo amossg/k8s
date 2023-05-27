@@ -1,6 +1,6 @@
 FROM python:3.8-slim-buster
 
-WORKDIR /flask_sr
+WORKDIR /home/runner/work/k8s/k8s/flask/
 
 COPY requirements.txt requirements.txt
 
