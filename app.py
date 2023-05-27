@@ -71,7 +71,7 @@ def mem_test2():
 api.add_resource(Main, "/api/somedata/<int:somedata_id>", "/mem", "/mem2")
 api.init_app(app)
 if __name__ == "__main__":
-    app.run(debug=True, port=5000, host="0.0.0.0")
+    app.run(debug=True, port=80)
 
 with open('/flask_sr/base/base.json', 'w') as outfile:
     json.dump(somedata, outfile)
