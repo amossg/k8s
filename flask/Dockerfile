@@ -1,8 +1,8 @@
 FROM python:3.8-slim-buster
 
-WORKDIR /home/runner/work/k8s/k8s/flask/
+WORKDIR /flask_sr
 
-COPY requirements.txt requirements.txt
+COPY  /home/runner/work/k8s/k8s/flask/equirements.txt requirements.txt
 
 RUN pip3 install -r requirements.txt
 
