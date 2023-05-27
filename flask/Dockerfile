@@ -4,6 +4,8 @@ WORKDIR /flask_sr
 
 COPY . .
 
+COPY /home/runner/work/k8s/k8s/flask/requirements.txt .
+
 RUN pip3 install -r requirements.txt
 
 #COPY app.py .
