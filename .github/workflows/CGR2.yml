@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: ls
+        run: ls -a
       - uses: RafikFarhad/push-to-gcr-github-action@v5-beta
         with:
           gcloud_service_key: ${{ secrets.AUTH_TO_GCP }}
