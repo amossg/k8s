@@ -6,7 +6,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setup gcloud
-      uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      uses: GoogleCloudPlatform/github-actions/setup-gcloud@v1
       with:
         version: '290.0.1'
         service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }} 
