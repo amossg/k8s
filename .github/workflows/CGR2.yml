@@ -10,6 +10,7 @@ jobs:
           ls -a
           cd flask
           ls -a
+          cat 
       - uses: RafikFarhad/push-to-gcr-github-action@v5-beta
         with:
           gcloud_service_key: ${{ secrets.AUTH_TO_GCP }}
@@ -17,4 +18,3 @@ jobs:
           project_id: flask
           image_name: server-end
           dockerfile: /home/runner/work/k8s/k8s/flask/Dockerfile
-          context: /home/runner/work/k8s/k8s/flask/
