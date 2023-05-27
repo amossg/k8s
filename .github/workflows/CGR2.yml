@@ -1,5 +1,5 @@
 name: Push to GCR GitHub Action
-on: [push]
+on: workflow_dispatch
 jobs:
   build-and-push-to-gcr:
     runs-on: ubuntu-latest
@@ -11,4 +11,4 @@ jobs:
           registry: gcr.io
           project_id: flask
           image_name: server-end
-           dockerfile: /home/runner/work/k8s/k8s/flask/Dockerfile
+          dockerfile: /home/runner/work/k8s/k8s/flask/Dockerfile
