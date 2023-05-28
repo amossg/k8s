@@ -12,6 +12,18 @@ steps:
     id  : PUSH
     args: ['push', '$_SERVICE_IMAGE1']
 
+# Docker Deploy image to Cloud Run
+  - name: gcr.io/cloud-builders/gcloud
+    id  : DEPLOY
+    args:
+      - run
+      - services
+      - update
+      - $_SERVICE_NAME
+      - --project=$_SERVICE_PROJECT
+      - --region=$_SERVICE_REGION
+      - --image=$_SERVICE_IMAGE1
+
 images: # Display the image in the build results - Build Artifacts
 - $_SERVICE_IMAGE1
 
