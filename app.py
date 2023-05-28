@@ -42,4 +42,4 @@ class Main(Resource):
 api.add_resource(Main, "/api/somedata/<int:somedata_id>")
 api.init_app(app)
 if __name__ == "__main__":
-    app.run(debug=True, port=3030, host="0.0.0.0")
+    app.run()
