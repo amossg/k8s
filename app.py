@@ -42,4 +42,6 @@ class Main(Resource):
 api.add_resource(Main, "/api/somedata/<int:somedata_id>")
 api.init_app(app)
 if __name__ == "__main__":
-    app.run(port=80)
+    from waitress import serve
+    serve(app, port=8080)
+
