@@ -1,10 +1,32 @@
-name: test
-on: workflow_dispatch #push
+
+name: Docker Image CI
+
+env:
+  DOCKERTAG: "europe-central2-docker.pkg.dev/celtic-beacon-387519/amossg-docker/testdocker"
+  
+on:
+  workflow_dispatch #push
+
 jobs:
-  test_job:
+
+  build:
+
     runs-on: ubuntu-latest
+
     steps:
-    - name: Git clone
-      uses: actions/checkout@v1 
-    - name: doker build
-      run: sudo docker build -t testapp /home/runner/work/k8s/k8s/flask
+    - uses: actions/checkout@v3
+    - id: 'auth'
+      name: 'Authenticate to Google Cloud'
+      uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: '${{ secrets.DOCKER_PUSH }}'
+    - name: Login to GAR
+      uses: docker/login-action@v2
+      with:
+        registry: europe-central2-docker.pkg.dev
+        username: _json_key
+        password: ${{ secrets.DOCKER_PUSH }}
+    - name: docker build
+      run: docker build -t ${{ env.DOCKERTAG}} .
+    - name: docker push
+      run: docker push ${{ env.DOCKERTAG}}
