@@ -13,7 +13,7 @@ spec:
   selector:
     matchLabels:
       app: flask-app
-  replicas: 4
+  replicas: 1
   template:
     metadata:
       name: flask-app-tmpl
@@ -33,14 +33,14 @@ spec:
   #      volumeMounts:
  #       - name: test-vol
 #          mountPath: /flask_sr/base
-        resources:
-          requests:
-            memory: "250Mi"
-            cpu: "200m"
-          limits:
-            memory: "500Mi"
-            cpu: "500m"
-        livenessProbe:
+  #      resources:
+#          requests:
+  #          memory: "250Mi"
+ #           cpu: "200m"
+ #         limits:
+   #         memory: "500Mi"
+  #          cpu: "500m"
+#        livenessProbe:
           httpGet:
               path: /api/somedata/0
               port: 8080
