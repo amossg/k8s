@@ -12,7 +12,7 @@ env:
   GKE_CLUSTER: gkeflask    # TODO: update to cluster name
   GKE_ZONE: europe-central2   # TODO: update to cluster zone
   DEPLOYMENT_NAME: gke-test # TODO: update to deployment name
-  REPOSITORY: celtic-beacon-387519 # TODO: update to Artifact Registry docker repository
+  REPOSITORY: amossg-docker # TODO: update to Artifact Registry docker repository
   IMAGE: flsak-app
 
 jobs:
