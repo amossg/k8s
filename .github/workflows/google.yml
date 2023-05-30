@@ -13,8 +13,9 @@
 name: Build and Deploy to GKE
 
 on:
-  push:
-    branches: [ "main" ]
+  workflow_dispatch
+ # push:
+  #  branches: [ "main" ]
 
 env:
   PROJECT_ID: celtic-beacon-387519
