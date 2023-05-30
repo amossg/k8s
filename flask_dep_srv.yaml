@@ -20,19 +20,19 @@ spec:
       labels:
         app: flask-app
     spec:
-      volumes:
-      - name: test-vol
-        persistentVolumeClaim:
-          claimName: flask-app-pvc
+#      volumes:
+ #     - name: test-vol
+  #      persistentVolumeClaim:
+  #        claimName: flask-app-pvc
       containers:
       - name: flsak-app
-        image: flask_image
+        image: flask_app
         imagePullPolicy: Never
         ports:
-        - containerPort: 5000
-        volumeMounts:
-        - name: test-vol
-          mountPath: /flask_sr/base
+        - containerPort: 8080
+  #      volumeMounts:
+ #       - name: test-vol
+#          mountPath: /flask_sr/base
         resources:
           requests:
             memory: "250Mi"
@@ -43,13 +43,13 @@ spec:
         livenessProbe:
           httpGet:
               path: /api/somedata/0
-              port: 5000
+              port: 8080
           initialDelaySeconds: 5
           periodSeconds: 5
         readinessProbe:
           httpGet:
             path: /api/somedata/0
-            port: 5000
+            port: 8080
           initialDelaySeconds: 5
           periodSeconds: 5
 ---
