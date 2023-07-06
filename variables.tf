@@ -8,7 +8,7 @@ variable "cluster_name" {
 }
 variable "env_name" {
   description = "The environment for the GKE cluster"
-  default     = "flask_dep_srv.yaml"
+  default     = "flask"
 }
 variable "region" {
   description = "The region to host the cluster in"
