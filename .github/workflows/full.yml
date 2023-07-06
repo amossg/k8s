@@ -45,4 +45,6 @@ jobs:
       run: terraform validate
       
     - name: terraform apply
-      run: terraform apply
+      run: |
+        terraform apply
+        yes
