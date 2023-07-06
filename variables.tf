@@ -12,7 +12,7 @@ variable "env_name" {
 }
 variable "region" {
   description = "The region to host the cluster in"
-  default     = "europe-central2-b"
+  default     = "europe-central2"
 }
 variable "zones" {
   description = "Cluster zone"
