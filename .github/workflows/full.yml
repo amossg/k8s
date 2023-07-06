@@ -37,3 +37,9 @@ jobs:
 
     - name: login
       run: gcloud auth activate-service-account doker-pull-push@celtic-beacon-387519.iam.gserviceaccount.com --key-file=./key.json
+      
+    - name: chek cloud
+      run: gcloud config get-value project
+      
+    - name: chek terraform 
+      run: terraform -v
