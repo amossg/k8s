@@ -1,6 +1,6 @@
 variable "project_id" {
   description = "The project ID of your project"
-  default     = "Flask"
+  default     = "celtic-beacon-387519"
 }
 variable "cluster_name" {
   description = "The name for the GKE cluster"
