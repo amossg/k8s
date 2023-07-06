@@ -45,5 +45,5 @@ jobs:
       run: terraform -v
         
     - name: chek kubectl 
-      run: kubectl version
+      run: kubectl version --short
       
