@@ -47,4 +47,3 @@ jobs:
     - name: chek kubectl 
       run: kubectl version
       
-      kubectl 
