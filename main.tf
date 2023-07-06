@@ -10,6 +10,7 @@ resource "google_compute_subnetwork" "subnet" {
   region        = "europe-central2"
   network       = google_compute_network.vpc.name
   ip_cidr_range = "10.0.0.0/24"
+}
 
 resource "google_container_cluster" "primary" {
   name                     = "my-gke-cluster"
@@ -96,5 +97,4 @@ resource "google_compute_instance" "default" {
   }
 
 }
-
 
