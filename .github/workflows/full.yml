@@ -44,6 +44,6 @@ jobs:
     - name: chek terraform 
       run: terraform -v
         
-    - name: chek kubectl 
-      run: kubectl version --short
+    - name: terraform init
+      run: terraform init
       
