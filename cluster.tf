@@ -1,5 +1,5 @@
 module "network" {
-  source = "git@github.com:FairwindsOps/terraform-gcp-vpc-native.git"
+  source = "git@github.com:FairwindsOps/terraform-gcp-vpc-native.git//default"
   // base network parameters
   network_name     = "kube"
   subnetwork_name  = "kube-subnet"
