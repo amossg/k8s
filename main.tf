@@ -1,5 +1,5 @@
 provider "google" {
-  credentials = file("/path/to/cred.json")
+  credentials = file("./key.json")
 }
 
 module "gke_auth" {
@@ -46,7 +46,7 @@ module "gke" {
   name              = "${var.cluster_name}-${var.env_name}"
   regional          = false
   region            = var.region
-  zones             = ["us-central1-c"]
+  zones             = ["europe-central2-b"]
   network           = module.gcp-network.network_name
   subnetwork        = module.gcp-network.subnets_names[0]
   ip_range_pods     = var.ip_range_pods_name
@@ -54,8 +54,8 @@ module "gke" {
   node_pools = [
     {
       name           = "node-pool"
-      machine_type   = "n2-standard-2"
-      node_locations = "us-central1-c"
+      machine_type   = "f1-micro"
+      node_locations = "europe-central2"
       min_count      = var.minnode
       max_count      = var.maxnode
       disk_size_gb   = var.disksize
