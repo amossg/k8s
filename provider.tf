@@ -15,5 +15,3 @@ provider "google" {
     zone = "europe-central2-b"
 
 }
-
-}
