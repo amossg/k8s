@@ -40,9 +40,9 @@ jobs:
       
     - name: export GOOGLE_APPLICATION_CREDENTIALS
       run: export GOOGLE_APPLICATION_CREDENTIALS="./key.json"
-
-   # - name: terraform apply
-   #   run: terraform apply
       
     - name: terraform validate
       run: terraform validate
+      
+    - name: terraform apply
+      run: terraform apply
