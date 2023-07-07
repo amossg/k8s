@@ -21,9 +21,9 @@ resource "google_container_cluster" "primary" {
 # Separately Managed Node Pool
 resource "google_container_node_pool" "primary_nodes" {
   name       = google_container_cluster.primary.name
-  location   = var.region
+  location   = "europe-central2-b"
   cluster    = google_container_cluster.primary.name
-  node_count = var.gke_num_nodes
+  node_count = 1
 
   node_config {
     oauth_scopes = [
@@ -32,12 +32,13 @@ resource "google_container_node_pool" "primary_nodes" {
     ]
 
     labels = {
-      env = var.project_id
+      env = "dev"
     }
 
-    # preemptible  = true
     machine_type = "f1-micro"
-    tags         = ["gke-node", "${var.project_id}-gke"]
+    preemptible  = true
+    #service_account = google_service_account.mysa.email
+
     metadata = {
       disable-legacy-endpoints = "true"
     }
