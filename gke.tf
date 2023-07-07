@@ -43,7 +43,9 @@ resource "google_container_node_pool" "cluster_node_pool" {
       env = "dev"
     }
 
-    machine_type = "f1-micro"
+    machine_type = "n1-standard-1"
+    disk_size_gb      = "20"
+    disk_type         = "pd-standard"
     preemptible  = true
     #service_account = google_service_account.mysa.email
 
