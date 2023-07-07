@@ -23,7 +23,7 @@ resource "google_container_cluster" "cluster" {
   name = "cluster1"
   location = "europe-central2-b"
   initial_node_count = 1
-  project = var.project-id
+  project = "celtic-beacon-387519"
   remove_default_node_pool = true
 }
 
