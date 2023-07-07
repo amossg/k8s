@@ -2,7 +2,7 @@
 variable db_version {
   description = "The version of of the database. For example,
     POSTGRES_9_6 or POSTGRES_11"
-  default = "POSTGRES_11"
+  default = "POSTGRES"
 }
 variable db_tier {
   description = "The machine tier (First Generation) or type (Second
