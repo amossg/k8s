@@ -19,10 +19,18 @@ resource "google_container_cluster" "primary" {
 }
 
 # Separately Managed Node Pool
-resource "google_container_node_pool" "primary_nodes" {
-  name       = google_container_cluster.primary.name
+resource "google_container_cluster" "cluster" {
+  name = "${var.cluster-name}-${terraform.workspace}"
+  location = "europe-central2-b"
+  initial_node_count = 1
+  project = var.project-id
+  remove_default_node_pool = true
+}
+
+resource "google_container_node_pool" "cluster_node_pool" {
+  name       = "${var.cluster-name}-${terraform.workspace}-node-pool"
   location   = "europe-central2-b"
-  cluster    = google_container_cluster.primary.name
+  cluster    = google_container_cluster.cluster.name
   node_count = 1
 
   node_config {
