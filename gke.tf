@@ -20,7 +20,7 @@ resource "google_container_cluster" "primary" {
 
 # Separately Managed Node Pool
 resource "google_container_cluster" "cluster" {
-  name = "${var.cluster-name}-${terraform.workspace}"
+  name = "cluster1"
   location = "europe-central2-b"
   initial_node_count = 1
   project = var.project-id
@@ -28,7 +28,7 @@ resource "google_container_cluster" "cluster" {
 }
 
 resource "google_container_node_pool" "cluster_node_pool" {
-  name       = "${var.cluster-name}-${terraform.workspace}-node-pool"
+  name       = "cluster12"
   location   = "europe-central2-b"
   cluster    = google_container_cluster.cluster.name
   node_count = 1
