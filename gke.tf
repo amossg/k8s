@@ -19,13 +19,13 @@ resource "google_container_cluster" "primary" {
 #}
 
 # Separately Managed Node Pool
-#resource "google_container_cluster" "cluster" {
-  #name = "cluster1"
-  #location = "europe-central2-b"
-  #initial_node_count = 1
-  #project = "celtic-beacon-387519"
-  #remove_default_node_pool = true
-#}
+resource "google_container_cluster" "cluster" {
+  name = "cluster1"
+  location = "europe-central2-b"
+  initial_node_count = 1
+  project = "celtic-beacon-387519"
+  #emove_default_node_pool = true
+}
 
 #resource "google_container_node_pool" "cluster_node_pool" {
   name       = "cluster12"
