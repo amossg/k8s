@@ -18,19 +18,3 @@ resource "google_compute_network" "custom" {
   name                    = "test-network"
   auto_create_subnetworks = false
 }
-
-resource "google_container_cluster" "my_vpc_native_cluster" {
-  name               = "my-vpc-native-cluster"
-  location           = "europe-central2"
-  initial_node_count = 1
-
-  network    = google_compute_network.custom.id
-  subnetwork = google_compute_subnetwork.custom.id
-
-  ip_allocation_policy {
-    cluster_secondary_range_name  = "pod-ranges"
-    services_secondary_range_name = google_compute_subnetwork.custom.secondary_ip_range.0.range_name
-  }
-
-  # other settings...
-}
