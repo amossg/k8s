@@ -1,5 +1,13 @@
 data "google_client_config" "default" {}
 
+provider "google" {
+    project = "celtic-beacon-387519"
+    region = "europe-central2"
+    credentials = file("./key.json")
+    zone = "europe-central2-b"
+
+}
+
 provider "kubernetes" {
   host                   = "https://${module.gke.endpoint}"
   token                  = data.google_client_config.default.access_token
@@ -13,7 +21,7 @@ module "gke" {
   region                     = "europe-central2"
   zones                      = ["europe-central2-a", "europe-central2-b", "europe-central2-c"]
   network                    = "vpc-01"
-  subnetwork                 = "data.google_compute_subnetwork.subnet.self_link"
+  subnetwork                 = "urope-central2"
   ip_range_pods              = "europe-central2-pods"
   ip_range_services          = "europe-central2-services"
   http_load_balancing        = false
