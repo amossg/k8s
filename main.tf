@@ -1,6 +1,6 @@
-provider "google" {
-  credentials = file("./key.json")
-}
+#provider "google" {
+#  credentials = file("./key.json")
+#}
 
 module "gke_auth" {
   source       = "terraform-google-modules/kubernetes-engine/google//modules/auth"
