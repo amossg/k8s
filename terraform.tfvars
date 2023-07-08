@@ -6,7 +6,7 @@ region                 = "europe-central2"
 
 network                = "gke-network"
 
-subnetwork"            = "gke-subnet"
+subnetwork             = "gke-subnet"
 
 ip_range_pods_name     = "ip-range-pods"
 
