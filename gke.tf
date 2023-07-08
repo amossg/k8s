@@ -27,11 +27,11 @@ resource "google_container_cluster" "cluster" {
   remove_default_node_pool = true
 }
 
-resource "google_container_node_pool" "cluster_node_pool" {
-  name       = "cluster12"
-  location   = "europe-central2-b"
-  cluster    = google_container_cluster.cluster.name
-  node_count = 1
+#resource "google_container_node_pool" "cluster_node_pool" {
+ # name       = "cluster12"
+  #location   = "europe-central2-b"
+  #cluster    = google_container_cluster.cluster.name
+  #node_count = 1
 
   node_config {
     oauth_scopes = [
