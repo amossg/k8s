@@ -1,6 +1,7 @@
 
 variable "project_id" {
   description = "The project ID to host the cluster in"
+  default     = "celtic-beacon-387519"
 }
 
 variable "cluster_name" {
