@@ -16,22 +16,22 @@ resource "google_container_cluster" "primary" {
 
   network    = google_compute_network.vpc.name
   subnetwork = google_compute_subnetwork.subnet.name
-}
+#}
 
 # Separately Managed Node Pool
-resource "google_container_cluster" "cluster" {
-  name = "cluster1"
-  location = "europe-central2-b"
-  initial_node_count = 1
-  project = "celtic-beacon-387519"
-  remove_default_node_pool = true
-}
+#resource "google_container_cluster" "cluster" {
+  #name = "cluster1"
+  #location = "europe-central2-b"
+  #initial_node_count = 1
+  #project = "celtic-beacon-387519"
+  #remove_default_node_pool = true
+#}
 
 #resource "google_container_node_pool" "cluster_node_pool" {
- # name       = "cluster12"
-  #location   = "europe-central2-b"
-  #cluster    = google_container_cluster.cluster.name
-  #node_count = 1
+  name       = "cluster12"
+  location   = "europe-central2-b"
+  cluster    = google_container_cluster.cluster.name
+  node_count = 1
 
   node_config {
     oauth_scopes = [
