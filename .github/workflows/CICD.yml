@@ -29,7 +29,7 @@ jobs:
     - name: terraform init
       run: terraform init
       
-    - name: terraform plan -var-five=terraform.tfvars
+    - name: terraform plan 
       run: terraform plan
        
     - name: terraform apply
