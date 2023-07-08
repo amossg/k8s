@@ -27,7 +27,7 @@ resource "google_container_cluster" "cluster" {
   #emove_default_node_pool = true
 }
 
-#resource "google_container_node_pool" "cluster_node_pool" {
+resource "google_container_node_pool" "cluster_node_pool" {
   name       = "cluster12"
   location   = "europe-central2-b"
   cluster    = google_container_cluster.cluster.name
