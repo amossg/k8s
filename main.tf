@@ -55,9 +55,10 @@ module "gke" {
     {
       name           = "node-pool"
       machine_type   = "n2-standard-2"
-      node_locations = "europe-central2"
+      node_locations = "europe-central2-b"
       min_count      = var.minnode
       max_count      = var.maxnode
+      local_ssd_count = 0
       disk_size_gb   = var.disksize
       preemptible    = false
       auto_repair    = false
