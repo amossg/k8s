@@ -20,7 +20,7 @@ module "gke" {
   name                       = "gke-test-1"
   region                     = "europe-central2"
   zones                      = ["europe-central2-a", "europe-central2-b", "europe-central2-c"]
-  network                    = "vpc-01"
+  network                    = "default"
   subnetwork                 = "urope-central2"
   ip_range_pods              = "europe-central2-pods"
   ip_range_services          = "europe-central2-services"
