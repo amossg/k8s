@@ -1,7 +1,7 @@
 resource "google_compute_subnetwork" "custom" {
   name          = "test-subnetwork"
   ip_cidr_range = "10.2.0.0/16"
-  region        = "us-central1"
+  region        = "europe-central2"
   network       = google_compute_network.custom.id
   secondary_ip_range {
     range_name    = "services-range"
