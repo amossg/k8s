@@ -13,9 +13,9 @@ module "gke" {
   region                     = "europe-central2"
   zones                      = ["europe-central2-a", "europe-central2-b", "europe-central2-c"]
   network                    = "vpc-01"
-  subnetwork                 = "europe-central2-01"
-  ip_range_pods              = "europe-central2-01-pods"
-  ip_range_services          = "europe-central2-01-services"
+  subnetwork                 = "eeurope-central2"
+  ip_range_pods              = "europe-central2-pods"
+  ip_range_services          = "europe-central2-services"
   http_load_balancing        = false
   network_policy             = false
   horizontal_pod_autoscaling = true
