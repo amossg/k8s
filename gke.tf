@@ -13,7 +13,7 @@ module "gke" {
   region                     = "europe-central2"
   zones                      = ["europe-central2-a", "europe-central2-b", "europe-central2-c"]
   network                    = "vpc-01"
-  subnetwork                 = "celtic-beacon-387519-subnet"
+  subnetwork                 = "data.google_compute_subnetwork.subnet.self_link"
   ip_range_pods              = "europe-central2-pods"
   ip_range_services          = "europe-central2-services"
   http_load_balancing        = false
