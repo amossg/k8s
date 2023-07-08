@@ -34,10 +34,10 @@ resource "google_container_node_pool" "cluster_node_pool" {
   node_count = 1
 
   node_config {
-    oauth_scopes = [
-      "https://www.googleapis.com/auth/logging.write",
-      "https://www.googleapis.com/auth/monitoring",
-    ]
+   # oauth_scopes = [
+    #  "https://www.googleapis.com/auth/logging.write",
+    #  "https://www.googleapis.com/auth/monitoring",
+  #  ]
 
     labels = {
       env = "dev"
