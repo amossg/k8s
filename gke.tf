@@ -20,7 +20,7 @@ resource "google_container_cluster" "primary" {
 
 resource "google_container_node_pool" "primary_nodes" {
   name       = google_container_cluster.primary.name
-  location   = europe-central2-b
+  location   = "europe-central2-b"
   cluster    = google_container_cluster.primary.name
   node_count = var.gke_num_nodes
 
