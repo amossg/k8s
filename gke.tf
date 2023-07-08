@@ -44,7 +44,7 @@ resource "google_container_cluster" "cluster" {
     }
 
     machine_type = "n1-standard-1"
-    disk_size_gb      = |20"
+    disk_size_gb      = "20"
     #disk_type         = pd-standard
     preemptible  = true
     #service_account = google_service_account.mysa.email
