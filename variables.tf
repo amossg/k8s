@@ -50,10 +50,10 @@ variable "minnode" {
 }
 variable "maxnode" {
   description = "Maximum number of node pool"
-  default     = 2
+  default     = 1
 }
 
 variable "disksize" {
   description = "Disk Size in GB"
-  default     = 10
+  default     = 20
 }
